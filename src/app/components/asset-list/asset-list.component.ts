@@ -10,7 +10,7 @@ import { faEdit, faEye, faChevronRight, faHashtag, faPencilAlt, faPlus, faRedoAl
   styleUrls: ['./asset-list.component.css']
 })
 export class AssetListComponent implements OnInit {
-  Asset:any = [];
+  Asset:any = []; 
  loaded:boolean
  id:string;
  faPencilAlt =faPencilAlt;
