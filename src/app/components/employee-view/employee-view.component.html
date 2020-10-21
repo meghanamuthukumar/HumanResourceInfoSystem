@@ -1,0 +1,82 @@
+<div style="width:400px; margin:0 auto;" class="preloader-container" *ngIf="loaded">
+  <div class="preloaders">
+    <div class="spinner-border text-danger" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-border text-warning" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-border text-info" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <p>Please wait while we load the data</p>
+  </div>
+</div>
+<div class="row" *ngIf="!loaded">
+  <div class="col-md-2 d-none d-lg-block">
+    
+    <app-sidebar></app-sidebar>
+  </div>
+
+
+  <div class="col-md-9 container">
+    <div id="login-container"> 
+      <div class="name">
+        <h2 *ngFor="let employee of Employee; let i = index">Employee name: {{employee.name}} </h2>
+        <h3 style="color: grey;" *ngFor="let employee of Employee; let i = index"><i>Updated on {{employee.date | date : 'dd-MM-yyyy'}}</i></h3>
+        <!--<p><i>Last updated on {{employee.date}}</i></p>-->
+        <br>
+      </div>
+     <br>
+      <div class="description" *ngFor="let employee of Employee; let i = index">
+
+        <div class="row">
+          <div class="col-md-6">
+            <p><b>ID:</b> {{employee.empid}} </p> <br>
+            <p><b>Email:</b> {{employee.email1}} </p> <br>
+            <p><b>Phone Number:</b> {{employee.phonenumber1}} </p> <br>
+            <p><b>Address Line 1:</b> {{employee.address1}} </p> <br>
+            <p><b>City:</b> {{employee.city}} </p> <br>
+            <p><b>Bank Account Number:</b> {{employee.bankac}} </p> <br>
+            <p><b>Aadhar number:</b> {{employee.aadhar}} </p> <br>
+            <p><b>Referral:</b> {{employee.referred}} </p> <br>
+            <p><b>Gender:</b> {{employee.gender}} </p> <br>
+            <p><b>Date of Birth:</b> {{employee.dob | date : 'dd-MM-yyyy'}} </p> <br>
+            <p><b>Date of Joining:</b> {{employee.joindate | date : 'dd-MM-yyyy'}} </p> <br>
+            <p><b>Area:</b> {{employee.area}} </p> <br>
+            <p><b>Facebook URL:</b> {{employee.facebook}} </p> <br>
+            <p><b>Instagram URL:</b> {{employee.instagram}} </p> <br>
+            <p><b>LinkedIn URL:</b> {{employee.linkedin}} </p> <br>
+          </div>
+          <div class="col-md-6">
+            <p><b>Designation:</b> {{employee.designation}} </p> <br>
+            <p><b>Alternate Email:</b> {{employee.email2}} </p> <br>
+            <p><b>Alternate Phone Number:</b> {{employee.phonenumber2}} </p> <br>
+            <p><b>Address Line 2:</b> {{employee.address2}} </p> <br>
+            <p><b>Pincode:</b> {{employee.pincode}} </p> <br>
+            <p><b>IFSC code:</b> {{employee.bankifsc}} </p> <br>
+            <p><b>Pan number:</b> {{employee.pan}} </p> <br>
+            <p><b>Comments:</b> {{employee.comments}} </p> <br>
+            <p><b>State:</b> {{employee.state}} </p> <br>
+            <p><b>Bank UPI code:</b> {{employee.bankupi}} </p> <br>
+            <p><b>Blood Group:</b> {{employee.bloodgroup}} </p> <br>
+            <p><b>Referral:</b> {{employee.referred}} </p> <br>
+            <p><b>Twitter URL:</b> {{employee.twitter}} </p> <br>
+            <p><b>Pinterest URL:</b> {{employee.pinterest}} </p> <br>
+            <p><b>YouTube URL:</b> {{employee.youtube}} </p> <br>
+          </div>
+        </div>
+        
+        <span class="edit" [routerLink]="['/edit-employee/', employee.empid]">
+          <button mat-raised-button><fa-icon class="fa-icon" [icon]="faEdit"></fa-icon>Update</button>
+        </span>
+      </div>
+      <!-- <div  class="col-md-4 ml-auto" *ngFor="let employee of Employee; let i = index" >
+        
+      </div> -->
+      <footer></footer>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,163 @@
+<div class="row">
+  <div class="col-md-2">
+    <app-sidebar></app-sidebar>
+      
+  </div>
+  <div class="col-md-9 wrapper container">
+      <!--<div class="row">
+        <div class="button-wrap col-md-12">
+          <button class="btn bg-danger active-tab" (click)="create()">
+            Registration
+          </button>
+        </div>
+      </div>--> <br>
+      <p class="container text-left main-text">Asset Registration</p>
+      <div class="card">
+        <div class="card-design-wrap">
+          
+          <form #form="ngForm" [formGroup]="assetCreateForm">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <div class="form-group row-space">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Asset Category</mat-label>
+                    <input type="text" matInput formControlName="assetcategory" maxlength="20"/>
+                  </mat-form-field>
+                  <div *ngIf="(myForm.assetcategory.touched || submitted) && myForm.assetcategory.errors?.required">
+                    <div *ngIf="submitted && myForm.assetcategory.errors" class="error-block">
+                      <div *ngIf="myForm.assetcategory.errors.pattern">
+                        Enter only alphabets.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <div class="col-12 col-md-4">
+                  <div class="form-group row-space">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Name</mat-label>
+                      <input type="text" matInput formControlName="name" maxlength="20" required/>
+                    </mat-form-field>
+                    <div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              
+                <div class="col-12 col-md-4">
+                  <div class="form-group row-space">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Quantity</mat-label>
+                      <input type="number" matInput formControlName="quantity" maxlength="9"/>
+                    </mat-form-field>
+                    <div *ngIf="(myForm.quantity.touched || submitted) && myForm.quantity.errors?.required">
+                      <div *ngIf="submitted && myForm.quantity.errors" class="error-block">
+                        <div *ngIf="myForm.quantity.errors.pattern">
+                          Enter valid Quantity
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <div class="form-group row-space">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Measurements</mat-label>
+                    <input type="text" matInput formControlName="measurement" maxlength="20"/>
+                  </mat-form-field>
+                  <div *ngIf="(myForm.measurement.touched || submitted) && myForm.measurement.errors?.required">
+                    <div *ngIf="submitted && myForm.measurement.errors" class="error-block">
+                      <div *ngIf="myForm.measurement.errors.pattern">
+                        Enter only alphabets.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <div class="col-12 col-md-4">
+                  <div class="form-group row-space">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Vendor Name</mat-label>
+                      <input type="text" matInput formControlName="vendorname" maxlength="20"/>
+                    </mat-form-field>
+                    <div *ngIf="(myForm.vendorname.touched || submitted) && myForm.vendorname.errors?.required">
+                      <div *ngIf="submitted && myForm.vendorname.errors" class="error-block">
+                        <div *ngIf="myForm.vendorname.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-12 col-md-4">
+                  <div class="form-group row-space">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Price</mat-label>
+                      <input type="number" matInput formControlName="price" maxlength="20"/>
+                    </mat-form-field>
+                    <div *ngIf="(myForm.price.touched || submitted) && myForm.price.errors?.required">
+                      <div *ngIf="submitted && myForm.price.errors" class="error-block">
+                        <div *ngIf="myForm.price.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+            </div>  
+            <div class="row">
+              <div class="col-12 col-md-4">
+                  <div class="form-group row-space">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Date</mat-label>
+                      <input type="text" matInput formControlName="date" [matDatepicker]="picker" (click)="picker.open()" [max]="today"  readonly/>
+                      <mat-datepicker-toggle matSuffix [for]="picker">
+                      </mat-datepicker-toggle>
+                      <mat-datepicker touchUi #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="form-group row-space">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Receiver's Name</mat-label>
+                      <input type="text" matInput formControlName="receiver" maxlength="20"/>
+                    </mat-form-field>
+                    <div *ngIf="(myForm.receiver.touched || submitted) && myForm.receiver.errors?.required">
+                      <div *ngIf="submitted && myForm.vendorname.errors" class="error-block">
+                        <div *ngIf="myForm.receiver.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+            </div>
+            
+          
+            <div class="row">
+              <div class="col-md-12"><br>
+                <div class="form-group float-right">
+                  
+                  <button type="reset" class="reset" mat-button>
+                    <fa-icon class="redo fa-2x" [icon]="faRedo" aria-hidden="true" (click)="resetForm()"></fa-icon>
+                  </button>
+                  <input class="btn btnwarn btnfont cancel1" type="reset" value="Cancel"  (click)="redirect()" style="margin-right: 20px;">
+                    <!--<button class="btn btn-success btn-lg submit1" type="submit">
+                      Submit
+                    </button>-->
+                    <input class="btn btnsuccess btnfont" type="submit" value="Submit">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>  
+    </div>
+</div>

@@ -1,0 +1,151 @@
+<div class="row">
+    <div class="col-md-2 d-none d-lg-block">
+        <div class="vertical-nav bg-white" id="sidebar">
+          <div class="py-4 px-3 mb-4 bg-light">
+            <div class="media d-flex align-items-center">
+              <div class="media-body">
+              </div>
+            </div>
+          </div>
+        
+          <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Employee Registration</p>
+        
+          <ul class="nav flex-column bg-white mb-0">
+            <li class="nav-item">
+              <span [routerLink]="['/create-employee']">
+                <a class="nav-link text-dark"><i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                  Employee Registration</a>
+              </span>
+            </li>
+            <li class="nav-item">
+              <span class="edit" [routerLink]="['/employees-list']">
+                <a class="nav-link text-dark"><i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                Employee List </a>
+              </span>
+            </li>
+            <li class="nav-item">
+              <span [routerLink]="['/social-media-card']">
+                <a class="nav-link text-dark"><i class="fa fa-globe mr-3 text-primary fa-fw"></i>
+                  Add Social Media Links</a>
+              </span>
+            </li>
+          </ul>
+        
+          <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Asset Management</p>
+        
+          <ul class="nav flex-column bg-white mb-0">
+            <li class="nav-item">
+              <span [routerLink]="['/create-asset']">
+                <a class="nav-link text-dark"><i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                  Asset Registration</a>
+              </span>
+            </li>
+            <li class="nav-item">
+              <span [routerLink]="['/asset-list']">
+                <a class="nav-link text-dark"><i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                  View Assets</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+    </div>
+      <div class="col-md-10">
+          <div class="card">
+            <h2>Social Media Links</h2>
+            <form #form="ngForm" [formGroup]="socialMediaForm">
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Employee ID</mat-label>
+                      <input type="text" matInput formControlName="empid" maxlength="50" required/>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>
+                        <i class="fa fa-facebook fa-1x"></i>Facebook URL</mat-label>
+                      <input type="text" matInput formControlName="facebook" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                      <mat-label><i class="fa fa-twitter fa-1x"></i>Twitter URL</mat-label>
+                      <input type="text" matInput formControlName="twitter" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                      <mat-label><i class="fa fa-instagram fa-1x"></i>Instagram URL</mat-label>
+                      <input type="text" matInput formControlName="instagram" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                      <mat-label><i class="fa fa-pinterest fa-1x"></i>Pinterest URL</mat-label>
+                      <input type="text" matInput formControlName="pinterest" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                      <mat-label><i class="fa fa-linkedin fa-1x"></i>LinkedIn URL</mat-label>
+                      <input type="text" matInput formControlName="linkedin" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                      <mat-label><i class="fa fa-youtube fa-1x"></i>Youtube URL</mat-label>
+                      <input type="text" matInput formControlName="youtube" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group container">
+                    <button class="btn btn-success btn-lg submit1" type="submit" (click)="onSubmit()">
+                      Submit
+                    </button>
+                </div>
+            </form>
+            
+
+          </div>
+      </div>
+</div>

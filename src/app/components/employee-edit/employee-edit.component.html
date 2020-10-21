@@ -1,0 +1,449 @@
+<div class="row">
+  <div class="col-md-2 d-none d-lg-block">
+    
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-md-9 wrapper container">
+    <!--<div class="row">
+      <div class="button-wrap col-md-12">
+        <button class="btn bg-danger active-tab" (click)="create()">
+          Registration
+        </button>
+      </div>
+    </div>-->
+    <div class="card">
+      <div class="card-design-wrap">
+        <h4 class="text-left mat-display-1 reg-emp h1">Update Employee</h4>
+        <br>
+        <h3><span class="sub-head">GENERAL DETAILS</span></h3>
+        <form #form="ngForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="form-group row-space">
+                <mat-form-field appearance="outline">
+                  <mat-label>Employee Name</mat-label>
+                  <input type="text" matInput formControlName="name" maxlength="20" required/>
+                </mat-form-field>
+                <div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                  <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                    <div *ngIf="myForm.name.errors.pattern">
+                      Enter only alphabets.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="col-12 col-md-4">
+              <div class="form-group row-space">
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input type="email" matInput formControlName="email1"/>
+                </mat-form-field>
+                <div *ngIf="(myForm.email1.touched || submitted) && myForm.email1.errors?.required">
+                  <div *ngIf="submitted && myForm.email1.errors" class="error-block">
+                    <div *ngIf="myForm.email1.errors.pattern">
+                      Enter valid email address.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group row-space">
+                <mat-form-field appearance="outline">
+                  <mat-label>Alternate Email</mat-label>
+                  <input type="email" matInput formControlName="email2" />
+                </mat-form-field>
+                <div *ngIf="(myForm.email2.touched || submitted) && myForm.email2.errors?.required">
+                  <div *ngIf="submitted && myForm.email2.errors" class="error-block">
+                    <div *ngIf="myForm.email2.errors.pattern">
+                      Enter valid email address.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="form-group row-space">
+                <mat-form-field appearance="outline">
+                  <mat-label>Designation</mat-label>
+                  <input type="text" matInput formControlName="designation" maxlength="20"/>
+                </mat-form-field>
+                <div *ngIf="(myForm.designation.touched || submitted) && myForm.designation.errors?.required">
+                  <div *ngIf="submitted && myForm.designation.errors" class="error-block">
+                    <div *ngIf="myForm.designation.errors.pattern">
+                      Enter only alphabets.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="col-12 col-md-4">
+              <div class="form-group row-space">
+                <mat-form-field appearance="outline">
+                  <mat-label>Phone Number</mat-label>
+                  <input type="text" matInput formControlName="phonenumber1" minlength="10" maxlength="10" required/>
+                </mat-form-field>
+                <div *ngIf="(myForm.phonenumber1.touched || submitted) && myForm.phonenumber1.errors?.required">
+                  <div *ngIf="submitted && myForm.phonenumber1.errors" class="error-block">
+                    <div *ngIf="myForm.phonenumber1.errors.pattern">
+                      Enter valid phone number.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group row-space">
+                <mat-form-field appearance="outline">
+                  <mat-label>Alternate Phone Number</mat-label>
+                  <input type="text" matInput formControlName="phonenumber2" minlength="10" maxlength="10" />
+                </mat-form-field>
+                <div *ngIf="(myForm.phonenumber2.touched || submitted) && myForm.phonenumber2.errors?.required">
+                  <div *ngIf="submitted && myForm.phonenumber2.errors" class="error-block">
+                    <div *ngIf="myForm.phonenumber2.errors.pattern">
+                      Enter valid phone number.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <br>
+              <div class="form-group row-space radio-group">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="gender"  >
+                  <mat-radio-button class="example-radio-button" *ngFor="let gender of gender" [value]="gender">
+                    {{ gender }}
+                  </mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="(myForm.gender.touched || submitted) && myForm.gender.errors?.required">
+                </div>
+              </div>
+            </div> <br><br>
+            <div class="col-12 col-md-4">
+              <div class="form-group row-space">
+                <mat-form-field appearance="outline">
+                  <mat-label>Date of Birth</mat-label>
+                  <input type="text" matInput formControlName="dob" [matDatepicker]="picker" (click)="picker.open()" [max]="today"/>
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                  </mat-datepicker-toggle>
+                  <mat-datepicker touchUi #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="form-group row-space">
+                <mat-form-field appearance="outline">
+                  <mat-label>Date of Joining</mat-label>
+                  <input type="text" matInput formControlName="joindate" placeholder="Date of Joining *" [matDatepicker]="picker1" (click)="picker.open()" [max]="today"/>
+                  <mat-datepicker-toggle matSuffix [for]="picker1"> </mat-datepicker-toggle>
+                  <mat-datepicker touchUi #picker1></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <br>
+          <h3><span class="sub-head">ADDITIONAL DETAILS</span></h3>
+                  <div class="row">
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Blood Group</mat-label>
+                          <select matNativeControl formControlName="bloodgroup" >
+                            <option value="" disabled></option>
+                            <option *ngFor="let option of Option" [ngValue]="option">{{option}}</option>
+                          </select>
+                        </mat-form-field>
+                        <div *ngIf="(myForm.bloodgroup.touched || submitted) && myForm.bloodgroup.errors?.required">
+                          <div *ngIf="submitted && myForm.bloodgroup.errors" class="error-block">
+                            <div *ngIf="myForm.bloodgroup.errors.pattern">
+                              Enter only alphabets.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Address Line 1</mat-label>
+                          <input type="text" matInput formControlName="address1" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Address Line 2</mat-label>
+                          <input type="text" matInput formControlName="address2" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Area</mat-label>
+                          <input type="text" matInput formControlName="area" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>City</mat-label>
+                          <input type="text" matInput formControlName="city" />
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.city.errors" class="error-block">
+                          <div *ngIf="myForm.city.errors.pattern">
+                            Enter valid city.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Pin Code</mat-label>
+                          <input type="text" matInput formControlName="pincode" minlength="6" maxlength="6" />
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.pincode.errors" class="error-block">
+                          <div *ngIf="myForm.pincode.errors.pattern">
+                            Enter valid pin code.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>State</mat-label>
+                          <input type="text" matInput formControlName="state" />
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.state.errors" class="error-block">
+                          <div *ngIf="myForm.state.errors.pattern">
+                            Enter only alphabets.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <br>
+              <h3><span class="sub-head">BANK DETAILS</span></h3>
+
+                  <div class="row">
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Bank Account Number</mat-label>
+                          <input type="text" matInput formControlName="bankac" />
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.bankac.errors" class="error-block">
+                          <div *ngIf="myForm.bankac.errors.pattern">
+                            Enter valid Bank Account Number.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>IFSC code</mat-label>
+                          <input type="text" matInput formControlName="bankifsc" />
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.bankifsc.errors" class="error-block">
+                          <div *ngIf="myForm.bankifsc.errors.pattern">
+                            Enter valid IFSC code.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>UPI code</mat-label>
+                          <input type="text" matInput formControlName="bankupi" />
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.bankupi.errors" class="error-block">
+                          <div *ngIf="myForm.bankupi.errors.pattern">
+                            Enter valid UPI code.
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>                 
+                  <div class="row">
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Aadhar Number</mat-label>
+                          <input type="text" matInput formControlName="aadhar" />
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.aadhar.errors" class="error-block">
+                          <div *ngIf="myForm.aadhar.errors.pattern">
+                            Enter valid Aadhar Number.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>PAN number</mat-label>
+                          <input type="text" matInput formControlName="pan" />
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.pan.errors" class="error-block">
+                          <div *ngIf="myForm.pan.errors.pattern">
+                            Enter valid PAN Number.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                <h3><span class="sub-head">SOCIAL MEDIA LINKS</span></h3>
+
+                <div class="form-group row-space">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>
+                        <i class="fa fa-facebook fa-1x"></i>Facebook URL</mat-label>
+                      <input type="text" matInput formControlName="facebook" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group row-space">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label><i class="fa fa-twitter fa-1x"></i>Twitter URL</mat-label>
+                      <input type="text" matInput formControlName="twitter" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group row-space">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label><i class="fa fa-instagram fa-1x"></i>Instagram URL</mat-label>
+                      <input type="text" matInput formControlName="instagram" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group row-space">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label><i class="fa fa-pinterest fa-1x"></i>Pinterest URL</mat-label>
+                      <input type="text" matInput formControlName="pinterest" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group row-space">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label><i class="fa fa-linkedin fa-1x"></i>LinkedIn URL</mat-label>
+                      <input type="text" matInput formControlName="linkedin" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <div class="form-group row-space">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label><i class="fa fa-youtube fa-1x"></i>Youtube URL</mat-label>
+                      <input type="text" matInput formControlName="youtube" maxlength="50"/>
+                    </mat-form-field>
+                    <!--<div *ngIf="(myForm.name.touched || submitted) && myForm.name.errors?.required">
+                      <div *ngIf="submitted && myForm.name.errors" class="error-block">
+                        <div *ngIf="myForm.name.errors.pattern">
+                          Enter only alphabets.
+                        </div>
+                      </div>
+                    </div>-->
+                </div>
+                <br> <br>
+                <h3><span class="sub-head">MISCELLANEOUS DETAILS</span></h3>
+
+                  <div class="row">
+                      <div class="col-12 col-md-4">
+                        <div class="form-group row-space">
+                          <mat-form-field appearance="outline">
+                            <mat-label>Referral Details</mat-label>
+                            <input type="text" matInput formControlName="referred" />
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group row-space">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Comments</mat-label>
+                          <input type="text" matInput formControlName="comments"/>
+                        </mat-form-field>
+                        <div *ngIf="submitted && myForm.comments.errors" class="error-block">
+                          <div *ngIf="myForm.comments.errors.pattern">
+                            Enter valid name.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><br>
+              <div class="form-group float-right">
+                
+                <button type="reset" class="reset" color=primary mat-button>
+                  <fa-icon class="redo" [icon]="faRedo" aria-hidden="true" (click)="resetForm()"></fa-icon>
+                </button>
+                <button type="button" class="btn btnwarn btnfont cancel1" (click)="redirect()" style="margin-right: 20px;">
+                  Cancel
+                </button>
+                <button class="btn btnsuccess btnfont submit1" type="submit">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>  
+  </div>
+</div>

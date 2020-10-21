@@ -1,0 +1,74 @@
+
+.navb {
+    background-color: #4285F4;
+    color: whitesmoke;
+    text-transform: uppercase;
+    /*box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);*/
+    /*border-bottom: 4px solid #f4b142;*/
+}
+.list{
+  padding-top: 20px;
+}
+.head{
+  font-size: 25px;
+  font-weight: bold;
+}
+.btn-view, .btn-add{
+  font-weight: 500;
+  border: 3px solid #ffffff;
+}
+.vertical-nav {
+  margin-top: 70px;
+  min-width: 17rem;
+  width: 17rem;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+  padding-left: 15px;
+}
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+/* for toggle behavior */
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none; }
+
+.nav-item{
+  padding-bottom: 12px;
+}
+
+hr{
+  border-top: 1px solid #286da8;
+}

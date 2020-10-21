@@ -1,0 +1,13 @@
+[{
+    "InvoiceNumber": "IN001",
+    "Date": "Semptember 07, 2020",
+    "DoctorName": "Dr. Darren Elder",
+    "Revenue": "5000",
+    "Department": "Dental",
+    "HospitalAddres": "Doccure Hospital, 3864 Quiet Valley Lane,Sherman Oaks, CA, 91403",
+    "DoctorAddress": " 4417 Goosetown Drive, Taylorsville,NC, 28681, United States",
+    "PhoneNumber": 8286329170,
+    "Email": "drdarrenelder@example.com",
+    "BankDetails": "Profit Bank, London, United Kingdom."
+
+}]

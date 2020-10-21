@@ -1,0 +1,117 @@
+/* .h1{
+  color: black; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+  padding-top: 25px;
+} */
+.main-text{
+  color: black; font-family: 'Poppins', sans-serif!important; font-size: 40px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+}
+.card{
+    padding: 20px;
+    border-radius: 8px;
+    /*border: 3px solid #0F9D58;*/
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 5px -1px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+.reg-emp{
+    color: black;
+    font-weight: bold;
+    font-style: initial;
+}
+.reset, .cancel1, .submit1{
+    margin-right: 10px;
+}
+.moneyCheck, .addressBook, .info, .example-radio-button{
+    padding-right: 10px;
+}
+.redo{
+    margin-top: 50px;
+    font-size: 20px;
+    color: #4285F4;
+}
+
+mat-expansion-panel-header{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+.mat-form-field-appearance-outline, .mat-form-field-outline {
+    color: #007bff;
+}
+
+.navb {
+    background-color: #4285F4;
+    color: whitesmoke;
+    text-transform: uppercase;
+    /*box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);*/
+    /*border-bottom: 4px solid #f4b142;*/
+}
+.head{
+  font-size: 25px;
+  font-weight: bold;
+}
+.btn-view, .btn-add{
+  font-weight: 500;
+  border: 3px solid #ffffff;
+}
+.vertical-nav {
+  min-width: 17rem;
+  width: 17rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+  padding-left: 15px;
+}
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+/* for toggle behavior */
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+.row-space{
+  margin-bottom: -30px !important;
+}
+.btnwarn{
+  border: 3px solid #4285F4;
+  color: #4285F4;
+}
+.btnsuccess{
+  background: #4285F4;
+  color: #ffffff;
+}
+.btnfont{
+  font-size: 20px;
+}
+.row-space{
+  padding-bottom: 30px;
+}

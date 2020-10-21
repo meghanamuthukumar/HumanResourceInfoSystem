@@ -1,0 +1,106 @@
+<div class="nav-margin">
+  <nav class="navbar navbar-dark fixed-top">
+    
+    <a class="navbar-brand" href="#">HRIS</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+
+    <div class="collapse navbar-collapse" id="navbarsExample01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <span [routerLink]="['/create-employee']">
+            <a class="nav-link" href="#">Employee Registration <span class="sr-only">(current)</span></a>
+          </span>
+          
+        </li>
+        <li class="nav-item  active">
+          <span [routerLink]="['/employees-list']">
+            <a class="nav-link">
+              Employee List</a>
+          </span>
+        </li>
+        <li class="nav-item  active">
+          <span [routerLink]="['/create-asset']">
+            <a class="nav-link">
+              Asset Registration</a>
+          </span>
+        </li>
+        <li class="nav-item  active">
+          <span [routerLink]="['/asset-list']">
+            <a class="nav-link">
+              View Assets</a>
+          </span>
+        </li>      
+      </ul>
+    </div>
+  </nav>
+  <!--<div class="d-none d-lg-block">
+    <div class="area "></div><nav class="main-menu">
+      <ul>
+          <li>
+            <span>
+            </span>
+              <a  [routerLink]="['/create-employee']">
+                  <i class="fa fa-user-plus fa-2x"></i>
+                  <span class="nav-text">
+                      Employee Registration
+                  </span>
+              </a>
+      
+          </li>
+          <li>
+            <a [routerLink]="['/employees-list']">
+                <i class="fa fa-address-card fa-2x"></i>
+                <span class="nav-text">
+                    Employee List
+                </span>
+            </a>
+    
+        </li>
+        <li>
+          <a  [routerLink]="['/create-asset']">
+            <i class="fa fa-bar-chart-o fa-2x"></i>
+              <span class="nav-text">
+                  Asset Registration
+              </span>
+          </a>
+  
+        </li>
+          
+          <li>
+              <a [routerLink]="['/asset-list']">
+                  <i class="fa fa-bars fa-2x"></i>
+                  <span class="nav-text">
+                      Asset List
+                  </span>
+              </a>
+          </li>
+      </ul>
+
+      <ul class="logout">
+          <li>
+            <a href="#">
+                  <i class="fa fa-power-off fa-2x"></i>
+                  <span class="nav-text">
+                      Logout
+                  </span>
+              </a>
+          </li>  
+      </ul>
+    </nav>
+  </div>-->
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<router-outlet></router-outlet>

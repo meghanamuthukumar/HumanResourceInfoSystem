@@ -1,0 +1,152 @@
+<div class="row">
+  <div class="col-md-2 d-none d-lg-block">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-md-9  d-none d-lg-block">
+    <div class="limiter">
+    
+    <div style="width:400px; margin:0 auto;" class="preloader-container" *ngIf="loaded">
+      <div class="preloaders">
+        <div class="spinner-border text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-info" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <p>Please wait while we load the data</p>
+      </div>
+    </div>
+    
+    <div class="container-table100" *ngIf="!loaded">
+      
+      <div class="wrap-table100">
+        <div class="table100">
+          <div class="row">
+            <div class="col-md-6 h1"><h2>Employee List </h2> </div>
+      
+            <div class="col-md-4">
+              
+              <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                <div class="input-group">
+                  <input class="form-control border-0 bg-light" type="text" name="search" [(ngModel)]="id" autocomplete="on" placeholder="Search"/>
+                  <div class="input-group-append">
+                    <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <span class="edit" [routerLink]="['/create-employee']">
+                <button  mat-mini-fab class=" redo-add"><fa-icon class="fa-icon" [icon]="faPlus"></fa-icon></button>
+              </span>
+              <span class="edit">
+                <button  mat-mini-fab class=" redo-add" (click)="redirect()"><fa-icon class="fa-icon" [icon]="faRedoAlt"></fa-icon></button>
+              </span>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr class="table100-head">
+                <th class="index">#</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Phone Number</th>
+                <th class="options-1 float-left">Options
+                  
+                </th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let employee of Employee.slice().reverse()  | filter: id;
+            let i = index">
+                <tr>
+                    <td class="index">{{i+1}}</td>
+                    <td>{{employee.empid}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.designation}}</td>
+                    <td>{{employee.phonenumber1}}</td>  
+                    <td>
+                      <span class="edit" [routerLink]="['/edit-employee/', employee.empid]">
+                        <button class="options" mat-mini-fab color="primary"><fa-icon class="fa-icon" [icon]="faPencilAlt"></fa-icon></button>
+                      </span>
+                      <span class="edit" [routerLink]="['/view-employee/', employee.empid]">
+                        <button class="options" mat-mini-fab color="primary"><fa-icon class="fa-icon" [icon]="faEye"></fa-icon></button>
+                      </span>   
+                    </td>             
+                  </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <!-- this is for mobile -->
+  <div class="col-md-10 d-lg-none container">
+    <br>
+    <div class="col-md-4">
+      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+        <div class="input-group">
+          <input class="form-control border-0 bg-light" type="text" name="search" [(ngModel)]="id" autocomplete="on" placeholder="Search"/>
+          <div class="input-group-append">
+            <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width:400px; margin:0 auto;" class="preloader-container" *ngIf="loaded">
+      <div class="preloaders">
+        <div class="spinner-border text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-border text-info" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <p>Please wait while we load the data</p>
+      </div>
+    </div>
+      <div *ngIf="!loaded">
+        <br>
+        <div class="card" *ngFor="let employee of Employee.slice().reverse()">
+          
+          <div class="employee">
+            <div class="employee-info"> 
+              <h2><b>Employee ID:</b> {{employee.empid }}</h2>
+              <div class="row">
+                <div class="col-sm">
+                  <p><span class="data"><b>Name: </b>{{employee.name}}</span> </p>
+                  <p><span class="data"><b>Designation: </b>{{employee.designation}}</span> </p>
+                </div>
+                <div class="col-sm">
+                  <p><span class="data"><b>Phone Number: </b>{{ employee.phonenumber1 }}</span> </p>
+                </div>
+                <div class="col-sm">
+                  <span class="edit" [routerLink]="['/edit-employee/', employee.empid]">
+                    <button class="options" mat-mini-fab color="primary" style="background: #4285F4;"><fa-icon class="fa-icon" [icon]="faPencilAlt"></fa-icon></button>
+                  </span>
+                  <span class="edit" [routerLink]="['/view-employee/', employee.empid]" >
+                    <button class="options" mat-mini-fab color="primary"style="background: #4285F4;"><fa-icon class="fa-icon" [icon]="faEye"></fa-icon></button>
+                  </span> 
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+

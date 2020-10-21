@@ -1,0 +1,53 @@
+<div class="vertical-nav bg-white" id="sidebar">
+  <!--<div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center">
+      <div class="media-body">
+      </div>
+    </div>
+  </div>-->
+  <br> <br>
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Employee Registration</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <span [routerLink]="['/create-employee']">
+        <a class="nav-link text-dark"><i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+          Employee Registration</a>
+      </span>
+    </li>
+    <li class="nav-item">
+      <span class="edit" [routerLink]="['/employees-list']">
+        <a class="nav-link text-dark"><i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+         Employee List </a>
+      </span>
+    </li>
+  </ul>
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Asset Management</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <span [routerLink]="['/create-asset']">
+        <a class="nav-link text-dark"><i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+          Asset Registration</a>
+      </span>
+    </li>
+    <li class="nav-item">
+      <span [routerLink]="['/asset-list']">
+        <a class="nav-link text-dark"><i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+          View Assets</a>
+      </span>
+    </li>
+  </ul>
+  <!-- <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Hospital Revenue</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <span [routerLink]="['/revenue-doctor']">
+        <a class="nav-link text-dark"><i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+          Revenue by doctor</a>
+      </span>
+    </li>
+    
+  </ul> -->
+</div>

@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-6 col-md-4">
+                <div class="card card1">
+                    <div *ngFor="let revenueDoc of revenueDoc.slice().reverse()  | filter: id;
+                    let i = index">
+                        <span class="invoice-head"> <p>Invoice: #{{revenueDoc.InvoiceNumber}}</p> </span> <hr>
+                        <span class="issue-date"> <p>Issue Date: {{revenueDoc.Date}}</p> </span> <hr>
+                        <span class="invoice-to"> 
+                            <p>Invoice to: </p>
+                            <p>{{revenueDoc.DoctorName}}</p>
+                            <p><fa-icon class="fa-icon" [icon]="faBuilding"></fa-icon>{{revenueDoc.DoctorAddress}}</p>
+                            <p><fa-icon class="fa-icon" [icon]="faPhone"></fa-icon>{{revenueDoc.PhoneNumber}}</p>
+                            <p><fa-icon class="fa-icon" [icon]="faEnvelope"></fa-icon>{{revenueDoc.Email}}</p>
+                        </span> <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="card card2">
+                    <div class="container-table100">
+                        <div class="wrap-table100">
+                          <div class="table100">
+                                <div class="row">
+                                    <div class="col-md-8 h1" style="padding-left: 100px;"><h2>Patients Visited</h2> </div>
+                                
+                                    <div class="col-md-4">
+                                        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                                            <div class="input-group">
+                                                <input class="form-control border-0 bg-light" type="text" name="search" [(ngModel)]="id" autocomplete="on" placeholder="Search"/>
+                                                <div class="input-group-append">
+                                                <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr class="table100-head">
+                                            <th class="index">#</th>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Phone</th>
+                                            <th>Reason</th>
+                                            <th>Last Visit</th>
+                                            <th>Paid</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngFor="let arrPatients of arrPatients.slice().reverse()  | filter: id;
+                                    let i = index">
+                                        <tr>
+                                            <td class="index">{{i+1}}</td>
+                                            <td>{{arrPatients.PatientNumber}}</td>
+                                            <td>{{arrPatients.PatientName}}</td>
+                                            <td>{{arrPatients.Phone}}</td>
+                                            <td>{{arrPatients.Reason}}</td>
+                                            <td>{{arrPatients.LastVisit}}</td>
+                                            <td>{{arrPatients.Paid}}</td>             
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card3">
+                    <span class="tot-revenue"><p>Total Revenue collected: <fa-icon class="fa-icon1" [icon]="faRupeeSign" style="padding-left: 5px;"></fa-icon> 3750</p></span>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+

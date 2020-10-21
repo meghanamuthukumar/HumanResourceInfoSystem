@@ -1,0 +1,56 @@
+[{
+    "PatientNumber": "PT001",
+   "PatientName": "Daniel Griffing",
+    "Reason": "Common COld",
+    "Phone": "8286329170",
+    "LastVisit": "30 Aug 2020",
+    "Paid": "500"
+},
+{
+    "PatientNumber": "PT002",
+   "PatientName": "Charlene Reed",
+   "Reason": "Headache",
+    "Phone": "8286329170",
+    "LastVisit": "30 Aug 2020",
+    "Paid": "600"
+},
+{
+    "PatientNumber": "PT003",
+   "PatientName": "Travis Trimble",
+   "Reason": "Throat infection",
+    "Phone": "8286329170",
+    "LastVisit": "30 Aug 2020",
+    "Paid": "400"
+},
+{
+    "PatientNumber": "PT004",
+   "PatientName": "Carl Kelly",
+   "Reason": "Rashes",
+    "Phone": "8286329170",
+    "LastVisit": "30 Aug 2020",
+    "Paid": "700"
+},
+{
+    "PatientNumber": "PT005",
+   "PatientName": "Michelle Fairfax",
+   "Reason": "Tooth ache",
+    "Phone": "8286329170",
+    "LastVisit": "30 Aug 2020",
+    "Paid": "500"
+},
+{
+    "PatientNumber": "PT006",
+   "PatientName": "Gina Moore",
+   "Reason": "Eye irritation",
+    "Phone": "8286329170",
+    "Last Visit": "30 Aug 2020",
+    "Paid": "600"
+},
+{
+    "PatientNumber": "PT007",
+   "PatientName": "Elsie Gilley",
+   "Reason": "Sprain",
+    "Phone": "8286329170",
+    "LastVisit": "30 Aug 2020",
+    "Paid": "450"
+}]

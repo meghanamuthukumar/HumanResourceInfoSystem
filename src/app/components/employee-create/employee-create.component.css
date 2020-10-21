@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.main-text{
+  color: black; font-family: 'Poppins', sans-serif!important; font-size: 40px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+}
+.wrapper{
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.card{
+    padding: 20px;
+    border-radius: 8px;
+    /*border: 3px solid #0F9D58;*/
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 5px -1px rgba(0, 0, 0, 0.4);
+    position: sticky;
+}
+.reg-emp{
+    color: black;
+    font-weight: bold;
+    font-style: initial;
+}
+.reset{
+    margin-right: 10px;
+    color: #4285F4;
+}
+.moneyCheck, .addressBook, .info, .example-radio-button{
+    padding-right: 10px;
+}
+.redo{
+    margin-top: 50px;
+    font-size: 40px;
+    margin-right: 20px;
+}
+mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+}
+
+
+
+.btn{
+  padding: 15px 32px;
+}
+.card1{
+  margin-top: 20px;
+  background: white;
+}
+.mat-form-field{
+  width: 90%;
+  margin: 10px;
+}
+.fa-1x{
+padding-right: 5px;
+}
+.btnwarn{
+  border: 3px solid #4285F4;
+  color: #4285F4;
+}
+.btnsuccess{
+  background: #4285F4;
+  color: #ffffff;
+}
+.btnfont{
+  font-size: 20px;
+}
+.sub-head{
+  font-weight: 800;
+  font-size: 20px;
+  padding-left: 8px;
+  font-family: 'Poppins', sans-serif!important;
+}
+.radio-group{
+  padding-left: 25px;
+}
+.row-space{
+  margin-bottom: -30px !important;
+}
+mat-label{
+  font-family: 'Poppins', sans-serif!important;
+  margin-bottom: 8px;
+}
+.example-radio-button{
+  font-family: 'Poppins', sans-serif!important;
+}

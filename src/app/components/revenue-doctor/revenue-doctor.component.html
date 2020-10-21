@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-9">
+        <div class="container-table100">
+            <div class="wrap-table100">
+              <div class="table100">
+                    <div class="row">
+                        <div class="col-md-8 h1" style="padding-left: 100px;"><h2>Revenue by Doctors
+                             </h2> </div>
+                    
+                        <div class="col-md-4">
+                            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                                <div class="input-group">
+                                    <input class="form-control border-0 bg-light" type="text" name="search" [(ngModel)]="id" autocomplete="on" placeholder="Search"/>
+                                    <div class="input-group-append">
+                                    <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                            <th class="index">#</th>
+                            <th>Invoice Number</th>
+                            <th>Name</th>
+                            <th>Revenue</th>
+                            <th>Department</th>
+                            <th>Options
+                                
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let arrDocs of arrDocs.slice().reverse()  | filter: id;
+                        let i = index">
+                            <tr>
+                                <td class="index">{{i+1}}</td>
+                                <td>{{arrDocs.InvoiceNumber}}</td>
+                                <td>{{arrDocs.DoctorName}}</td>
+                                <td>{{arrDocs.Revenue}}</td>
+                                <td>{{arrDocs.Department}}</td>  
+                                <td> <!--
+                                    <span class="edit" [routerLink]="['/edit-employee/', employee.empid]">
+                                    <button class="options" mat-mini-fab color="primary"><fa-icon class="fa-icon" [icon]="faPencilAlt"></fa-icon></button>
+                                    </span> --> 
+                                    <span class="edit" [routerLink]="['/revenue-report']">
+                                    <button class="options" mat-mini-fab color="primary"><fa-icon class="fa-icon" [icon]="faEye"></fa-icon></button>
+                                    </span> 
+                                </td>             
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

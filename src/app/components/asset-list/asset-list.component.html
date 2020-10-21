@@ -1,0 +1,224 @@
+<div class="row">
+  <div class="col-md-2 d-none d-lg-block"> 
+    <app-sidebar></app-sidebar>
+  </div>
+    
+
+    <div class="col-md-9">
+      <!--<div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="overview-wrap">
+                            <h2 class="title-1">overview</h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-t-25">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="overview-item overview-item--c1">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-account-o"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>10368</h2>
+                                        <span>members online</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="overview-item overview-item--c2">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-shopping-cart"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>388,688</h2>
+                                        <span>items solid</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="overview-item overview-item--c3">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-calendar-note"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>1,086</h2>
+                                        <span>this week</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart3"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="overview-item overview-item--c4">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-money"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>$1,060,386</h2>
+                                        <span>total earnings</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart4"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+      </div>      -->
+      <div class="limiter  d-none d-lg-block">
+      
+      <div style="width:400px; margin:0 auto;" class="preloader-container" *ngIf="loaded">
+        <div class="preloaders">
+          <div class="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <p>Please wait while we load the data</p>
+        </div>
+      </div>
+      <div class="container-table100" *ngIf="!loaded">
+        <div class="wrap-table100">
+          <div class="table100">
+            <div class="row">
+              <div class="col-md-6 h1"><h2>Asset List </h2> </div>
+        
+              <div class="col-md-4">
+                
+                <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                  <div class="input-group">
+                    <input class="form-control border-0 bg-light" type="text" name="search" [(ngModel)]="id" autocomplete="on" placeholder="Search"/>
+                    <div class="input-group-append">
+                      <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <span class="edit" [routerLink]="['/create-asset']">
+                  <button  mat-mini-fab class=" redo-add"><fa-icon class="fa-icon" [icon]="faPlus"></fa-icon></button>
+                </span>
+                <span class="edit">
+                  <button  mat-mini-fab class=" redo-add" (click)="redirect()"><fa-icon class="fa-icon" [icon]="faRedoAlt"></fa-icon></button>
+                </span>
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr class="table100-head">
+                    <th>Date</th>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Measurement</th>
+                    <th>Price</th>
+                    <th>Vendor</th>
+                    <th>Recieved By</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let asset of Asset.slice().reverse() | filter: id;
+                  let i = index">
+                        <tr>
+                          <td>{{asset.date | date : 'dd-MM-yyyy'}}</td>
+                          <td>{{asset.id}}</td>
+                          <td>{{asset.category}}</td>
+                          <td>{{asset.name}}</td>
+                          <td>{{asset.quantity}}</td>
+                          <td>{{asset.measurement}}</td>
+                          <td>{{asset.price}}</td>
+                          <td>{{asset.vendorname}}</td>
+                          <td>{{asset.reciever}}</td>
+                        </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+    <!-- this is for mobile-->
+    <div class="col-md-10 d-lg-none container">
+      <br>
+      <div class="col-md-4">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+          <div class="input-group">
+            <input class="form-control border-0 bg-light" type="text" name="search" [(ngModel)]="id" autocomplete="on" placeholder="Search"/>
+            <div class="input-group-append">
+              <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="width:400px; margin:0 auto;" class="preloader-container" *ngIf="loaded">
+        <div class="preloaders">
+          <div class="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <p>Please wait while we load the data</p>
+        </div>
+      </div>
+        <div *ngIf="!loaded">
+          <br>
+          <div class="card" *ngFor="let asset of Asset.slice().reverse() | filter: id;" (click)="readAsset()">
+          
+            <div class="employee">
+              <div class="employee-info"> 
+                <h2><b>Asset Category:</b> {{asset.assetcategory }}</h2>
+                <div class="row">
+                  <div class="col-sm">
+                    <p><span class="data"><b>Name: </b>{{asset.name}}</span> </p>
+                    <p><span class="data"><b>Measurement: </b>{{asset.measurement}}</span> </p>
+                  </div>
+                  <div class="col-sm">
+                    <p><span class="data"><b>Date of Purchase: </b>{{ asset.date | date : 'dd-MM-yyyy'}}</span> </p>
+                  </div>
+                  <div class="col-sm">
+                    <p><span class="data"><b>Quantity: </b>{{asset.quantity}}</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>    

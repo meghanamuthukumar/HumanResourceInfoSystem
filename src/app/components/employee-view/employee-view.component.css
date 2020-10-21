@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Sriracha&display=swap');
+
+ #login-container {
+	 height: 100%;
+	 width: 100%;
+	 padding: 20px;
+	 border-radius: 5px;
+	 background: white;
+	 position: relative;
+	 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	 margin-top: 20px;
+
+}
+ #login-container h2 {
+	 text-align: left;
+	 margin-bottom: 20px;
+	 font-size: 30px;
+	 text-transform: uppercase;
+}
+ #login-container .description {
+	 margin-bottom: 20px;
+}
+ #login-container .social {
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 width: calc(100% - 40px);
+}
+
+ #login-container footer {
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 background: #000000;
+	 color: white;
+	 width: 100%;
+	 position: absolute;
+	 bottom: 0;
+	 height: 30px;
+	 padding: 0 20px;
+	 margin-left: -20px;
+	 border-bottom-left-radius: 5px;
+	 border-bottom-right-radius: 5px;
+}
+ @-webkit-keyframes gradientBG {
+	 0% {
+		 background-position: 0% 50%;
+	}
+	 100% {
+		 background-position: 100% 50%;
+	}
+}
+ @keyframes gradientBG {
+	 0% {
+		 background-position: 0% 50%;
+	}
+	 100% {
+		 background-position: 100% 50%;
+	}
+}

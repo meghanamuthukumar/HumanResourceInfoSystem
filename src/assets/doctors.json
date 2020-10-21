@@ -1,0 +1,60 @@
+[{
+    "InvoiceNumber": "IN001",
+   "DoctorName": "Dr. Darren Elder",
+    "Revenue": "5000",
+    "Department": "Dental"
+},
+{
+    "InvoiceNumber": "IN002",
+   "DoctorName": "Dr. Deborah Angel",
+    "Revenue": "3300",
+    "Department": "Cardiology"
+},
+{
+    "InvoiceNumber": "IN003",
+   "DoctorName": "Dr. John Gibbs",
+    "Revenue": "4100",
+    "Department": "Dental"
+},
+{
+    "InvoiceNumber": "IN004",
+   "DoctorName": "Dr.Katharine Berthold",
+    "Revenue": "4100",
+    "Department": "Orthopaedics"
+},
+{
+    "InvoiceNumber": "IN005",
+   "DoctorName": "Dr. Linda Tobin",
+    "Revenue": "2000",
+    "Department": "Neurology"
+},
+{
+    "InvoiceNumber": "IN006",
+   "DoctorName": "Dr. Marvin Campbell",
+    "Revenue": "3700",
+    "Department": "Orthopaedics"
+},
+{
+    "InvoiceNumber": "IN007",
+   "DoctorName": "Dr. Olga Barlow",
+    "Revenue": "3500",
+    "Department": "Dental"
+},
+{
+    "InvoiceNumber": "IN008",
+   "DoctorName": "Dr. Paul Richard",
+    "Revenue": "3000",
+    "Department": "Dermatology"
+},
+{
+    "InvoiceNumber": "IN009",
+   "DoctorName": "Dr. Ruby Perrin",
+    "Revenue": "3100",
+    "Department": "Dental"
+},
+{
+    "InvoiceNumber": "IN010",
+   "DoctorName": "Dr. Sofia Brient",
+    "Revenue": "3500",
+    "Department": "Urology"
+}]
